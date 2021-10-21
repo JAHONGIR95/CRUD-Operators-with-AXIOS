@@ -1,10 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Container } from 'reactstrap'
+import AddContact from './components/AddContact'
+import { ContactList } from './components/ContactList'
+import { Header } from './components/Header'
 
 function App() {
+
+    const [contacts, setContacts] = useState([])
+
+    const addHandler = (contact) => {
+        setContacts([...contacts, contact])
+        console.log(contact)
+    }
+    
+
     return (
         <div>
-            <h1>hello</h1>
+        <Header />
+        <Container>
+            <AddContact addHandler={addHandler} />
+            <ContactList contacts={contacts} />
+        </Container>
         </div>
+        
     )
 }
 
