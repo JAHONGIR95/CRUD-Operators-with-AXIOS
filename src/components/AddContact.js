@@ -15,6 +15,7 @@ export default class AddContact extends Component {
         }
         this.props.addHandler(this.state)
         this.setState({ name: '', email: '' })
+        this.props.history.push('/')
     }
 
     render() {
@@ -30,7 +31,8 @@ export default class AddContact extends Component {
                         <Label className="mb-2">Email</Label>
                         <Input type="text" placeholder="Email" name="email" value={this.state.email} onChange={(e) => this.setState({email: e.target.value})} />
                     </FormGroup>
-                    <Button className="btn" color="primary" type="Submit">Add</Button>
+                    <Button className="btn me-2" color="primary" type="Submit">Add</Button>
+                    <Button onClick={() => this.props.history.push('/')} color="danger">Cancel</Button>
                 </Form>
             </div>
         )

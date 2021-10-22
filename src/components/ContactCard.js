@@ -2,7 +2,7 @@ import React from 'react'
 import user from '../images/user.png'
 import '../components/main.css'
 
-export const ContactCard = ({ id, name, email }) => {
+export const ContactCard = ({ id, name, email, clickHandler }) => {
     return (
             <div className="d-flex justify-content-between align-items-center py-2 border-bottom" key={id}>
                 <div className="d-flex align-items-center">
@@ -12,7 +12,7 @@ export const ContactCard = ({ id, name, email }) => {
                         <div>{email}</div>
                     </div>
                 </div>
-                <i style={{color: "red", fontSize: '20px'}} className="trash alternate outline icon"></i>
+                <i onClick={()=> clickHandler(id)} style={{color: "red", fontSize: '20px'}} className="trash alternate outline icon"></i>
             </div>
     )
 }
