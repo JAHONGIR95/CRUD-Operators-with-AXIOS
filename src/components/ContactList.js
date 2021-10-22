@@ -17,7 +17,7 @@ export const ContactList = ({ contacts, clickHandler }) => {
                     <>
                         {
                             contacts.map(contact => (
-                                <ContactCard key={contact.id} {...contact} clickHandler={clickHandler} />
+                                <ContactCard key={contact.id} contact={contact} clickHandler={clickHandler} />
                                 ))
                             }
                     </>

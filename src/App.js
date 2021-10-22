@@ -5,6 +5,7 @@ import { ContactList } from './components/ContactList'
 import { Header } from './components/Header'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { v4 as uuid } from 'uuid'
+import { CardDetails } from './components/CardDetails'
 
 function App() {
     const [contacts, setContacts] = useState([])
@@ -37,9 +38,8 @@ function App() {
                 <Switch>
                     <Route exact path="/" render={(props) => (<ContactList {...props} contacts={contacts} clickHandler={removeHandler} />) } />
                     <Route path="/add" render={(props) => (<AddContact {...props} addHandler={addHandler} />)} />
+                    <Route pat="/contact/:id" component={CardDetails} />
                 </Switch>
-                {/* <AddContact addHandler={addHandler} /> */}
-                {/* <ContactList contacts={contacts} clickHandler={removeHandler} /> */}
             </Container>
         </Router>
 
