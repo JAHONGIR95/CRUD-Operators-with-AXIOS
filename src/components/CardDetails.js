@@ -5,6 +5,7 @@ import user from '../images/cardImage.png'
 
 export const CardDetails = (props) => {
     const { name, email } = props.location.state.contact
+    
     return (
         <div className="main mt-5">
             <div className="ui card centered">
