@@ -6,7 +6,7 @@ import { Header } from './components/Header'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { v4 as uuid } from 'uuid'
 import { CardDetails } from './components/CardDetails'
-import { EditContact } from './EditContact'
+import { EditContact } from './components/EditContact'
 
 function App() {
     const [contacts, setContacts] = useState([])
@@ -23,11 +23,9 @@ function App() {
 
     const addHandler = (contact) => {
         setContacts([...contacts, { id: uuid(), ...contact }])
-        console.log(contact)
     }
 
     const editHandler = (contact) => {
-        console.log(contact);
         setContacts(contacts.map( eachEl => {
             return contact.id === eachEl.id ? {...contact} : eachEl
         }))

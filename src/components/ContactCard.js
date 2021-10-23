@@ -2,8 +2,6 @@ import React from 'react'
 import user from '../images/user.png'
 import '../components/main.css'
 import { useHistory } from 'react-router'
-// import { Link } from 'react-router-dom'
-
 
 export const ContactCard = (props) => {
     const history = useHistory()
